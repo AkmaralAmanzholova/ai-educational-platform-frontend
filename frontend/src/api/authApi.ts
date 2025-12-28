@@ -80,7 +80,15 @@ export async function getMe() {
   if (!token) {
     throw new Error('No token found');
   }
-
+  
+  if (token === 'demo-token') {
+    return {
+      full_name: 'Demo User',
+      email: 'demo@example.com',
+      role: localStorage.getItem('user_role') || 'student',
+    };
+  }
+  
   const res = await fetch(`${API_URL}/auth/me`, {
     headers: {
       Authorization: `Bearer ${token}`,
