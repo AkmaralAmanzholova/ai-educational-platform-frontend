@@ -12,7 +12,6 @@ import {
   Select,
   MenuItem,
   Box,
-  Typography,
   Autocomplete,
   Chip,
 } from '@mui/material'
