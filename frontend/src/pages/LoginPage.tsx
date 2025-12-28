@@ -52,6 +52,14 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
+  const handleDemoLogin = () => {
+    // Demo auth (no backend)
+    localStorage.setItem('token', 'demo-token');
+    localStorage.setItem('refresh_token', 'demo-refresh-token');
+    localStorage.setItem('user_role', 'teacher'); // or 'teacher'
+
+    navigate('/dashboard');
+  };
   return (
     <Container
       sx={{
@@ -127,6 +135,15 @@ export default function LoginPage() {
                 sx={{ bgcolor: 'primary.main', '&:hover': { bgcolor: 'primary.300' } }}
               >
                 {loading ? 'Logging in...' : 'Login'}
+              </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                disabled={loading}
+                onClick={handleDemoLogin}
+                sx={{ borderColor: 'neutral.300', color: 'neutral.700' }}
+              >
+                Войти в демо-режиме
               </Button>
               <Stack spacing={1}>
                 <Typography variant="body2" sx={{ color: 'neutral.500', textAlign: 'center' }}>
