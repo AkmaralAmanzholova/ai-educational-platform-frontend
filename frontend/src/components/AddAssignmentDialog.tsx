@@ -14,9 +14,6 @@ import {
   CircularProgress,
   Alert,
   Typography,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
 } from '@mui/material'
 import { createAssignment, getStudySets, type StudySetOut } from '../api/studySetsApi'
 
